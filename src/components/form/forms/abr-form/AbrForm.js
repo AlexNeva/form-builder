@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import { Form, Field } from 'react-final-form';
-import { BsInput } from '../../inputs';
+import { BsInput, BsRadio } from '../../inputs';
 import { SubmitButton } from '../../buttons';
 
 export const AbrForm = () => {
@@ -26,6 +26,32 @@ export const AbrForm = () => {
                       placeholder: 'Enter your email',
                     }}
                   />
+                )}
+              </Field>
+            </Col>
+            <Col xs={12}>
+              <Field name='Radio'>
+                {({ input, meta }) => (
+                  <>
+                    <BsRadio
+                      error={meta.error || meta.submitError}
+                      input={input}
+                      touched={meta.touched}
+                      bsProps={{
+                        name: 'radio btns',
+                        type: 'radio',
+                      }}
+                    />
+                    <BsRadio
+                      error={meta.error || meta.submitError}
+                      input={input}
+                      touched={meta.touched}
+                      bsProps={{
+                        name: 'radio btns',
+                        type: 'radio',
+                      }}
+                    />
+                  </>
                 )}
               </Field>
             </Col>
